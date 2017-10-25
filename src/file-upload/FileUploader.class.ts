@@ -325,7 +325,7 @@ export class FileUploader {
   }
 
   _acceptFilter(item:FileLikeObject):boolean {
-    return this.acceptType( item.type )
+     this.acceptType(item.type === '' ? ('.' + item.name.split('.').pop()) : item.type);
   }
 
   acceptType(type:string):boolean {
