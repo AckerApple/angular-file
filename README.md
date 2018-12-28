@@ -204,9 +204,13 @@ Combo Drop Select
 [fileDropDisabled]  : any = false
 [selectable]        : any = false
 [(lastInvalids)]    : {file:File,type:string}[] = []
+(lastInvalidsChange): EventEmitter<{file:File,type:string}[]>
 [(lastBaseUrl)]     : string//Base64 od last file uploaded url
+(lastBaseUrlChange) : EventEmitter<string>
 [(file)]            : File//last file uploaded
+(fileChange)        : EventEmitter<File>
 [(files)]           : File[]
+(filesChange)       : EventEmitter<File[]>
 (init)              : EventEmitter<ngf>
 ```
 
