@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "tslib": "^2.0.0"
-},
+  },
   "contributors": [
     {
       "name": "Vyacheslav Chub",
@@ -52,5 +52,13 @@
       "name": "Acker Apple",
       "url": "https://github.com/ackerapple"
     }
-  ]
+  ],
+  "main": "bundles/angular-file.umd.js",
+  "module": "fesm2015/angular-file.js",
+  "es2015": "fesm2015/angular-file.js",
+  "esm2015": "esm2015/angular-file.js",
+  "fesm2015": "fesm2015/angular-file.js",
+  "typings": "angular-file.d.ts",
+  "metadata": "angular-file.metadata.json",
+  "sideEffects": false
 }
