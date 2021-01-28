@@ -19,14 +19,17 @@ export const detectSwipe = function(evt:any):boolean {
         var currentY = touches[0].clientY;
         if ((Math.abs(currentX - initialTouchStartX) > 20) ||
           (Math.abs(currentY - initialTouchStartY) > 20)) {
-          evt.stopPropagation();
-          if (evt.cancelable) {
-            evt.preventDefault();
-          }
-          return false;
+          // Swipe detected
+          return true;
+        }
+        // touch was a 'tap' so prevent propogation and prevent
+        // device follow-up actions (click, mouseup, mousedown, etc.)
+        evt.stopPropagation();
+        if (evt.cancelable) {
+          evt.preventDefault();
         }
       }
-      return true;
+      return false;
     }
   }
   return false
