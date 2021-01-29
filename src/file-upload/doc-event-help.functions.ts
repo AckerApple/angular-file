@@ -19,14 +19,26 @@ export const detectSwipe = function(evt:any):boolean {
         var currentY = touches[0].clientY;
         if ((Math.abs(currentX - initialTouchStartX) > 20) ||
           (Math.abs(currentY - initialTouchStartY) > 20)) {
-          evt.stopPropagation();
-          if (evt.cancelable) {
-            evt.preventDefault();
-          }
-          return false;
+          // 29JAN2021 Removed/moved to inverse condition.
+          //           Should be run during tap detection.
+          // evt.stopPropagation();
+          // if (evt.cancelable) {
+          //   evt.preventDefault();
+          // }
+          // 29JAN2021 Swipe detected should return true instead of false.
+          // return false;
+          // Swipe detected
+          return true;
+        }
+        // tap detected
+        evt.stopPropagation();
+        if (evt.cancelable) {
+          evt.preventDefault();
         }
       }
-      return true;
+      // 29JAN2021 Non-swipe condition should return false instead of true.
+      // return true;
+      return false;
     }
   }
   return false
